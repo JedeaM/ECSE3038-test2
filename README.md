@@ -20,16 +20,16 @@ The system monitors bathroom humidity and allows the fan to operate automaticall
 ## Repository Structure
 
 ```text
+
 ECSE3038-test2/
 │
 ├── api/
 │   ├── app.py
-│   ├── requirements.txt
-│   └── .env
+│   └── requirements.txt
 │
 ├── board/
 │   ├── include/
-│   │   └── secrets.h
+│   │   └── secrets.h (created locally; not committed)
 │   ├── src/
 │   │   └── main.cpp
 │   ├── diagram.json
@@ -38,6 +38,7 @@ ECSE3038-test2/
 │
 ├── .gitignore
 └── README.md
+
 ```
 
 **Note:** `.env`, `secrets.h`, virtual environments and generated build files are excluded from GitHub.
@@ -234,6 +235,15 @@ Start the simulation using the Wokwi VS Code extension.
 - MongoDB credentials are stored in `.env`.
 - Secret files are excluded from version control.
 - Device readings require API-key authentication.
+
+The following files contain private credentials and are created locally:
+
+- `api/.env` – stores the MongoDB connection string and MQTT device name.
+- `board/include/secrets.h` – stores Wi-Fi credentials, API URL, registered device MAC address and API key.
+
+These files are excluded from Git version control using `.gitignore` and must never be uploaded to the public GitHub repository.
+
+Before running the project, create these files locally and enter your own configuration values.
 
 ## Project Repository
 
